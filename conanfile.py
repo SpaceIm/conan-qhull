@@ -66,5 +66,7 @@ class QhullConan(ConanFile):
         self.cpp_info.names["cmake_find_package"] = "Qhull"
         self.cpp_info.names["cmake_find_package_multi"] = "Qhull"
         self.cpp_info.libs = tools.collect_libs(self)
+        if self.settings.os == "Linux":
+            self.cpp_info.system_libs.append("m")
         if self.settings.compiler == "Visual Studio" and self.options.shared:
             self.cpp_info.defines.extend(["qh_dllimport"])
