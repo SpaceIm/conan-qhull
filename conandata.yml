@@ -12,3 +12,5 @@ patches:
   "8.0.0":
     - patch_file: "patches/fix-cmake-8.0.0.patch"
       base_path: "source_subfolder"
+    - patch_file: "patches/no-cpp11.patch"
+      base_path: "source_subfolder"
